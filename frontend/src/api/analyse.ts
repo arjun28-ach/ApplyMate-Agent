@@ -1,6 +1,6 @@
 import type { AnalyseResponse } from "../types";
 
-const ANALYSE_URL = "http://localhost:4000/api/analyse";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
@@ -32,7 +32,7 @@ export async function analyseApplication(input: {
   formData.append("jobDescription", input.jobDescription);
 
   try {
-    const response = await fetch(ANALYSE_URL, {
+    const response = await fetch(`${API_URL}/api/analyse`, {
       method: "POST",
       body: formData
     });
