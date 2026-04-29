@@ -1,0 +1,44 @@
+{
+  "name": "applymate-agent",
+  "version": "1.0.0",
+  "description": "A TypeScript LangGraph mini project for matching job descriptions against a CV and project history.",
+  "type": "module",
+  "main": "dist/backend/src/index.js",
+  "scripts": {
+    "dev": "tsx backend/src/cli.ts",
+    "dev:server": "tsx backend/src/server.ts",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "tsc -p tsconfig.json",
+    "build:frontend": "npm run build --prefix frontend",
+    "start": "node dist/backend/src/cli.js",
+    "start:server": "node dist/backend/src/server.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "langgraph",
+    "job-matching",
+    "career"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/core": "^0.3.77",
+    "@langchain/langgraph": "^0.4.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "pdf-parse": "^1.1.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^22.15.21",
+    "@types/pdf-parse": "^1.1.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.3"
+  }
+}

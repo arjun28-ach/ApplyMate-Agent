@@ -1,0 +1,17 @@
+[
+  {
+    "name": "WorkflowPilot",
+    "summary": "Built a workflow automation service for internal operations teams.",
+    "skills": ["TypeScript", "Node.js", "REST APIs", "Docker", "PostgreSQL", "AWS"]
+  },
+  {
+    "name": "InsightBoard",
+    "summary": "Created a lightweight analytics dashboard with API aggregation.",
+    "skills": ["TypeScript", "Node.js", "Analytics", "API Integration", "CI/CD"]
+  },
+  {
+    "name": "PromptFlow Lab",
+    "summary": "Experimented with prompt patterns and graph-based orchestration for AI-assisted drafting.",
+    "skills": ["Prompt Engineering", "LangGraph", "AI Applications", "Technical Writing"]
+  }
+]

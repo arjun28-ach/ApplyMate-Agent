@@ -1,0 +1,1 @@
+We are hiring a backend TypeScript engineer to build AI-assisted workflow tooling using Node.js, REST APIs, LangGraph, prompt engineering, Docker, CI/CD, and AWS. You will collaborate with stakeholders, communicate technical decisions clearly, and ship production-ready integrations.

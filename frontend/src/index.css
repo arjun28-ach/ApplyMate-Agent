@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0f1720;
+  background:
+    radial-gradient(circle at top left, rgba(210, 169, 74, 0.22), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(39, 91, 77, 0.16), transparent 28%),
+    #f4efe7;
+  font-family: "Manrope", ui-sans-serif, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(213, 93, 61, 0.2);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(20px);
+}

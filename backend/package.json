@@ -1,0 +1,12 @@
+{
+  "name": "applymate-agent-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "cli": "tsx src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  }
+}
