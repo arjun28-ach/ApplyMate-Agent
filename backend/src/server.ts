@@ -1,6 +1,6 @@
 import "dotenv/config";
 import cors from "cors";
-import express from "express";
+import express, { type NextFunction, type Request, type Response } from "express";
 import multer from "multer";
 import { fileURLToPath } from "node:url";
 
@@ -24,7 +24,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type"]
 }));
 
-app.post("/api/analyse", upload.single("cv"), async (req, res) => {
+app.post("/api/analyse", upload.single("cv"), async (req: Request, res: Response) => {
   try {
     console.log("Analyse route called");
 
@@ -58,17 +58,19 @@ app.post("/api/analyse", upload.single("cv"), async (req, res) => {
       finalReport: result.finalReport
     });
   } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown server error";
+
     if (error instanceof Error && (
-      error.message.includes("Unsupported CV format")
-      || error.message.includes("uploaded .txt file is empty")
-      || error.message.includes("uploaded .pdf file did not contain extractable text")
-      || error.message.includes("Failed to parse the uploaded PDF file")
+      message.includes("Unsupported CV format")
+      || message.includes("uploaded .txt file is empty")
+      || message.includes("uploaded .pdf file did not contain extractable text")
+      || message.includes("Failed to parse the uploaded PDF file")
     )) {
-      return res.status(400).json({ error: error.message });
+      return res.status(400).json({ error: message });
     }
 
     console.error("ApplyMate API failed.");
-    console.error(error instanceof Error ? error.message : error);
+    console.error(message);
 
     return res.status(500).json({
       error: "Internal server error."
@@ -76,15 +78,17 @@ app.post("/api/analyse", upload.single("cv"), async (req, res) => {
   }
 });
 
-app.use((error: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+app.use((error: unknown, _req: Request, res: Response, _next: NextFunction) => {
   if (error instanceof multer.MulterError && error.code === "LIMIT_FILE_SIZE") {
     return res.status(400).json({
       error: "CV file is too large. Maximum allowed size is 5MB."
     });
   }
 
+  const message = error instanceof Error ? error.message : "Unknown server error";
+
   console.error("ApplyMate API middleware failed.");
-  console.error(error instanceof Error ? error.message : error);
+  console.error(message);
 
   return res.status(500).json({
     error: "Internal server error."

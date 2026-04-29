@@ -1,3 +1,4 @@
+import type { Express } from "express";
 import pdfParse from "pdf-parse";
 
 const TXT_MIME_TYPES = new Set(["text/plain"]);
