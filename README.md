@@ -15,13 +15,13 @@ This project matters because CV-job matching is a practical AI engineering probl
 ## Screenshots
 
 ### Upload & Analysis Flow
-`Add screenshot here`
+![Upload Page](docs/screenshots/upload-page.png)
 
 ### Results Dashboard
-`Add screenshot here`
+![Result Dashboard](docs/screenshots/analysis-result.png)
 
 ### Technical Analysis View
-`Add screenshot here`
+![Technical Analysis](docs/screenshots/technical-analysis.png)
 
 ## Features
 
