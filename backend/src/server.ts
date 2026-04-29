@@ -19,7 +19,10 @@ const upload = multer({
 });
 
 app.use(cors({
-  origin: "http://localhost:5173",
+   origin: [
+      "http://localhost:5173",
+      "https://apply-mate-agent.vercel.app"
+    ],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"]
 }));
