@@ -10,7 +10,7 @@ This project matters because CV-job matching is a practical AI engineering probl
 
 ## Live Demo
 
-`Coming soon`
+`apply-mate-agent.vercel.app`
 
 ## Screenshots
 
